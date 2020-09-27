@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 
 /**
  * @author Ryan James
@@ -16,7 +18,7 @@ public class Stairs {
 		// Check for 0 steps
 		if (n == 0) return 0;
 		// Check for steps
-		if (n < 2) {
+		if (n == 1) {
 			return (int)Math.pow(1, n - 2);
 		}
 		if (n == 2) {
@@ -26,6 +28,19 @@ public class Stairs {
 		return totalCount;
 	}
 	public int num_steps(int n, int[] x) {
-		return 0;
+		// Initial check for 0 steps
+		if (n < 0) { return -1; }
+		if (n == 0) { return 0; }
+		// First sort the initial array
+		Arrays.sort(x);
+		int totalCount = 0;
+		// Check if something has newly been added
+		for (int i = 0; i < x.length; i++) {
+			totalCount += (int)Math.pow(x[i], n - 2);
+			if (x[i] == n) { return totalCount; }
+		}
+		// Assume not
+		totalCount = num_steps(n - 1, x) + num_steps(n - 2, x);
+		return totalCount;
 	}
 }
