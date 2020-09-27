@@ -14,7 +14,7 @@ class StairsTest {
 		int n = 1;
 		int result = stairs.num_steps(n);
 		int expected = 1;
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 	
 	@Test
@@ -23,7 +23,7 @@ class StairsTest {
 		int n = 2;
 		int result = stairs.num_steps(n);
 		int expected = 2;
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 	
 	@Test
@@ -32,7 +32,7 @@ class StairsTest {
 		int n = 3;
 		int result = stairs.num_steps(n);
 		int expected = 3;
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 	
 	@Test
@@ -40,8 +40,17 @@ class StairsTest {
 		Stairs stairs = new Stairs();
 		int n = 4;
 		int result = stairs.num_steps(n);
-		int expected = 6;
-		assertEquals(result, expected);
+		int expected = 5;
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	void testNum5() {
+		Stairs stairs = new Stairs();
+		int n = 5;
+		int result = stairs.num_steps(n);
+		int expected = 8;
+		assertEquals(expected, result);
 	}
 	
 	@Test
@@ -50,7 +59,7 @@ class StairsTest {
 		int n = 0;
 		int result = stairs.num_steps(n);
 		int expected = 0;
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 	
 	@Test
@@ -59,7 +68,7 @@ class StairsTest {
 		int n = -4;
 		int result = stairs.num_steps(n);
 		int expected = -1;
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 	
 	
