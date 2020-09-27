@@ -75,4 +75,35 @@ class StairsTest {
 	//================================================================================
     // Second method test
     //================================================================================
+	
+	// Initial tests of previous data sets
+	@Test
+	void test2Num5() {
+		Stairs stairs = new Stairs();
+		int n = 5;
+		int[] myArray = {1, 2};
+		int result = stairs.num_steps(n, myArray);
+		int expected = 8;
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	void test2Num4() {
+		Stairs stairs = new Stairs();
+		int n = 4;
+		int[] myArray = {1, 2, 5, 7};
+		int result = stairs.num_steps(n, myArray);
+		int expected = 5;
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	void test2Num8() {
+		Stairs stairs = new Stairs();
+		int n = 9;
+		int[] myArray = {2, 3, 7, 9};
+		int result = stairs.num_steps(n, myArray);
+		int expected = 8;
+		assertEquals(expected, result);
+	}
 }
