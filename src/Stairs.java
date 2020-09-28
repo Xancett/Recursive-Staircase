@@ -30,17 +30,15 @@ public class Stairs {
 	public int num_steps(int n, int[] x) {
 		// Initial check for 0 steps
 		if (n < 0) { return -1; }
-		if (n == 0) { return 0; }
+		if (n == 0) { return 1; }
 		// First sort the initial array
 		Arrays.sort(x);
 		int totalCount = 0;
-		// Check if something has newly been added
 		for (int i = 0; i < x.length; i++) {
-			totalCount += (int)Math.pow(x[i], n - 2);
-			if (x[i] == n) { return totalCount; }
+			if (n - x[i] >= 0) {
+				totalCount += num_steps(n - x[i], x);
+			}
 		}
-		// Assume not
-		totalCount = num_steps(n - 1, x) + num_steps(n - 2, x);
 		return totalCount;
 	}
 }
